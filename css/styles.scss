@@ -1,26 +1,12 @@
-// Bootstrap
-@import "vendor/stylesheets/bootstrap.scss";
-// @import "vendor/javascript/bootstrap.scss"
-
 // Base: Normalize, variables, functions, mixins, helpers
+@import "base/normalize.scss";
 @import "base/base.scss";
-// @import "base/mixins.scss";
 
 // Layout
 @import "layout/page.scss";
-@import "layout/header.scss";
-@import "layout/main.scss";
-@import "layout/footer.scss";
-
-// Sections
-
-// Pages
-
-// Helpers
-
-// Themes
+@import "layout/mobile.scss";
+@import "layout/tablet.scss";
+@import "layout/desktop.scss";
 
 // Components
 @import "components/buttons.scss";
-
-// Third-party vendors
