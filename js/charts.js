@@ -37,7 +37,7 @@ function drawChart(dataResults) {
   };
   var chart = new google.visualization.ColumnChart(
     // Get the element ID where chart will be drawn
-    document.getElementById('barchart'));
+    document.getElementById('bar-chart'));
   // At last, draw the chart
   chart.draw(data, options);
 } // End drawChart Function

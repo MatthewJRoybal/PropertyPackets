@@ -48,6 +48,8 @@ body {
   padding-top: 15px;
 }
 
+// LANDING DISPLAY
+
 #landing {
   z-index: 10;
   position: absolute;
@@ -66,6 +68,41 @@ body {
 button {
   width: 100px;
 }
+
+// SEARCH FORM
+
+#search {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.search-form-item {
+  width: 80%;
+  margin: 25px auto;
+}
+
+.search-form-item input,
+.search-form-item select,
+.search-form-item button {
+  width: 100%;
+  height: 35px;
+}
+
+.no-show {
+  display: none;
+}
+
+#search {
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 25px;
+  padding: 10px;
+}
+
+// DETAIL COLUMNS
 
 #details {
   width: 100%;
@@ -95,5 +132,13 @@ button {
   
   #landing h2 {
     padding: 7.5px 0;
+  }
+  
+  #search {
+    margin-top: 50px;
+  }
+  
+  .search-form-item {
+    margin: 10px auto;
   }
 }
