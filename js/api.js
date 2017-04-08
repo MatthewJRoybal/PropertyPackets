@@ -8,6 +8,7 @@ function api(fipsCodes, searchDataType, apiCallBack) {
   var apiObject = {};
   // Loop through API by year
   // changed to https
+  
   for( year = 2012; year < 2016; year++ ) {
     var url = ('https://api.census.gov/data/' + year + '/acs1?get=NAME,' + searchDataType + '&for=place:' + placeCode + '&in=state:' + stateCode + '&key=463ceaca9227b02f83061924598f5d9b4f50a118');
     // Make API request during loop to force a/synchronous pause

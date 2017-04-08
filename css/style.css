@@ -457,6 +457,13 @@ button {
   margin-top: 25px;
   padding: 10px; }
 
+#result {
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
 #details {
   width: 100%; }
 
