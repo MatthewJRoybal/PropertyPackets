@@ -4,7 +4,7 @@ function landing {
     this.fadeOut(1000).addClass('hidden');
   })
 }
-
+ 
 $(document).ready(function() {
   landing();
 });
