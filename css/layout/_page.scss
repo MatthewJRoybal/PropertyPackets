@@ -118,8 +118,20 @@ button {
 }
 
 .search-form-item input,
-.search-form-item select,
-.search-form-item button {
+.search-form-item select {
+  width: 100%;
+  height: 35px;
+}
+
+#search-btn,
+#reset-btn {
+  display: inline-block;
+  width: 49.5%;
+  height: 35px;
+}
+
+#search-button,
+#reset-button {
   width: 100%;
   height: 35px;
 }
@@ -148,10 +160,18 @@ button {
   transform: translate(-50%, -50%);
 }
 
-div#reset {
+div#message {
   margin-left: -50px;
   margin-right: -50px;
 }
+
+//#reset {
+//  z-index: 10;
+//  position: absolute;
+//  top: 80%;
+//  left: 50%;
+//  transform: translate(-50%, -50%);
+//}
 
 // DETAIL COLUMNS
 

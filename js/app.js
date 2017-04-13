@@ -25,10 +25,11 @@ function doSearch() {
           $('#search').hide();
           var result = drawChart(data);
           $('#result').html(result);
+          $('#reset').html('<input type="reset" class="reset-btn">');
         } else {
-          var message = ('<div id="reset">' + 
+          var message = ('<div id="message">' +
                          "<h2>Sorry, this town doesn't have the data you've requested. Remember, you must choose a city with a population of 65,000 or greater.</h2>" + 
-                         '<input type="reset" id="reset-btn">' + 
+                         '<input type="reset" class="reset-btn">' +
                         '</div>');
           $('#search').hide();
           $('#result').html(message);
@@ -41,7 +42,8 @@ function doSearch() {
 // Provide the user with a way to start a new search
 function redisplaySearch() {
   $('#content').on('click', 'input:reset', function() {
-    $('#reset').fadeOut(1000).addClass('hidden');
+    $('#message').fadeOut(1000).addClass('hidden');
+    $('#results').fadeOut(1000).addClass('hidden');
     $('#search').delay(1000).fadeIn(1000);
     $('#search')[0].reset();
   });
@@ -52,5 +54,4 @@ $(document).ready(function() {
   showSearch();
   doSearch();
   redisplaySearch();
-  doSearch();
 });
