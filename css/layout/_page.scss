@@ -16,6 +16,11 @@ body {
 
 #map {
   // Starting z-index based on map
+  background: url(../images/background.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   z-index: 0;
 }
 
@@ -27,7 +32,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(255, 255, 255, 0.65);
+  background-color: rgba(255, 255, 255, 0.50);
 }
 
 #logo {
@@ -37,7 +42,7 @@ body {
   width: 100%;
   height: 100px;
   padding: 15px auto;
-  background-color: rgba(200, 255, 200, 0.75);
+  // background-color: rgba(200, 255, 200, 0.75);
 }
 
 #logo img {
@@ -58,11 +63,42 @@ body {
   margin-top: 25px;
   padding: 10px;
   text-align: center;
-  color: green;
+}
+
+#landing .heading {
+  display: block;
+  line-height: 1.25;
+  text-shadow: 1px 1px 2px black;
+}
+
+#landing .line-1 {
+  color: blue;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#landing .line-2 {
+  color: blue;
+  font-size: 2.5rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+#landing .line-3 {
+  color: blue;
+  font-size: 2rem;
+  font-weight: bold;
+  white-space: nowrap;
 }
 
 #landing h2 {
   padding: 25px 0;
+  color: darkblue;
+  text-shadow: 1px 1px 2px white;
+}
+
+#reset h2 {
+  text-shadow: 1px 1px 2px lightblue;
 }
 
 button {
@@ -112,6 +148,11 @@ button {
   transform: translate(-50%, -50%);
 }
 
+div#reset {
+  margin-left: -50px;
+  margin-right: -50px;
+}
+
 // DETAIL COLUMNS
 
 #details {
@@ -137,11 +178,11 @@ button {
 @media only screen and (max-width: 767px) and (orientation: landscape) {
   
   #landing {
-    margin-top: 40px;
+    margin-top: 50px;
   }
   
   #landing h2 {
-    padding: 7.5px 0;
+    padding: 0;
   }
   
   #search {
@@ -150,5 +191,16 @@ button {
   
   .search-form-item {
     margin: 10px auto;
+  }
+  
+  div#reset {
+    margin-top: 100px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  #landing h2 {
+    padding-left: 200px;
+    padding-right: 200px;
   }
 }
