@@ -1,111 +1,102 @@
+/******************************************
+ ****************  PAGE   *****************
+ *****************************************/
+
 html,
 body {
-  // Force elements to 100% for map to cover 100% of the page
+  // Start off right with 100% height, fonts, etc
 	font-family: 'Open Sans', sans-serif;
-	min-height: 100%;
   height: 100%;
 	margin: 0;
 	padding: 0;
 }
 
-#page,
-#map {
-	// Must be height, not min-height for google maps to work
-	height: 100%;
-}
-
-#map {
-  // Starting z-index based on map
+div#page{
+	// Continue 100% page height. Add a cover mode background and bring it to the back
+	z-index: -10;
+  height: 100%;
   background: url(../images/background.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  z-index: 0;
 }
 
-#map-cover {
-  // Add transparent cover over the entire page and map
-  z-index: 5;
+div#page-cover {
+  // Add a transparent page cover between the background and content
+  z-index: -5;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.70);
+}
+
+img#logo {
+  // Easy absolute position for the logo
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(255, 255, 255, 0.50);
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 250px;
+  max-width: 300px;
 }
 
-#logo {
-  z-index: 10;
+div#content {
+  height: 100%
+}
+
+/******************************************
+ **********  LANDING DISPLAY   ************
+ *****************************************/
+
+div#landing {
   position: absolute;
-  top: 0px;
-  width: 100%;
-  height: 100px;
-  padding: 15px auto;
-  // background-color: rgba(200, 255, 200, 0.75);
-}
-
-#logo img {
-  z-index: 10;
-  display: block;
-  width: 300px;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -55%);
   margin: 0 auto;
-  padding-top: 15px;
-}
-
-// LANDING DISPLAY
-
-#landing {
-  z-index: 10;
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
-  margin-top: 25px;
-  padding: 10px;
+  max-width: 600px;
   text-align: center;
 }
 
-#landing .heading {
+div#landing .heading {
   display: block;
   line-height: 1.25;
-  text-shadow: 1px 1px 2px black;
-}
-
-#landing .line-1 {
-  color: blue;
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-#landing .line-2 {
-  color: blue;
-  font-size: 2.5rem;
-  font-weight: bold;
-  white-space: nowrap;
-}
-
-#landing .line-3 {
-  color: blue;
   font-size: 2rem;
   font-weight: bold;
   white-space: nowrap;
+  color: blue;
+  font-family: 'PT Sans', sans-serif;
+  text-shadow: 1px 1px 2px orange;
+  text-align: center;
 }
 
-#landing h2 {
+div#landing .line-2 {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 3.25rem;
+  letter-spacing: 2px;
+}
+
+div#landing h2 {
+  margin-top: 10px;
   padding: 25px 0;
   color: darkblue;
+  font-family: 'Libre Baskerville', serif;
   text-shadow: 1px 1px 2px white;
 }
 
-#reset h2 {
-  text-shadow: 1px 1px 2px lightblue;
-}
+/******************************************
+ ************  SEARCH FORM   **************
+ *****************************************/
 
-button {
-  width: 100px;
+#search {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 25px;
+  padding: 10px;
 }
-
-// SEARCH FORM
 
 #search {
   width: 100%;
@@ -114,7 +105,7 @@ button {
 
 .search-form-item {
   width: 80%;
-  margin: 25px auto;
+  margin: 15px auto;
 }
 
 .search-form-item input,
@@ -126,34 +117,30 @@ button {
 #search-btn,
 #reset-btn {
   display: inline-block;
-  width: 49.5%;
+  float: left;
+  min-width: 107px;
+  width: 49.30%;
+  max-width: 200px;
   height: 35px;
 }
 
 #search-button,
 #reset-button {
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 35px;
 }
 
-.no-show {
-  display: none;
-}
- 
-#search {
-  z-index: 10;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-top: 25px;
-  padding: 10px;
+button {
+  width: 100px;
 }
 
-// CHART RESULT
+/******************************************
+ ***********  CHART RESULTS   *************
+ *****************************************/
 
 #result {
-  z-index: 10;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -165,15 +152,18 @@ div#message {
   margin-right: -50px;
 }
 
-//#reset {
-//  z-index: 10;
-//  position: absolute;
-//  top: 80%;
-//  left: 50%;
-//  transform: translate(-50%, -50%);
-//}
 
-// DETAIL COLUMNS
+#reset h2 {
+  text-shadow: 1px 1px 2px lightblue;
+}
+
+.no-show {
+  display: none;
+}
+
+/******************************************
+ ***********  DETAIL COLUMNS   ************
+ *****************************************/
 
 #details {
   width: 100%;
@@ -195,14 +185,41 @@ div#message {
   text-align: center;
 }
 
-@media only screen and (max-width: 767px) and (orientation: landscape) {
+/******************************************
+ ***********  CHART RESULTS   *************
+ *****************************************/
+
+button {
+  min-width: 100px;
+  max-width: 200px;
+  background-color: aqua;
+  color: darkblue;
+  text-align: center;
+  font-size: 1.5em;
+  cursor: pointer;
+  height: 40px;
+  border-radius: 5px;
   
-  #landing {
-    margin-top: 50px;
+}
+
+/******************************************
+ **********  SMALL LANDSCAPE   ************
+ *****************************************/
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+
+  div#landing {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+    text-align: center;
   }
   
-  #landing h2 {
-    padding: 0;
+  div#landing h2 {
+    margin: 0;
+    padding: 15px 0;
   }
   
   #search {
@@ -218,9 +235,19 @@ div#message {
   }
 }
 
-@media only screen and (min-width: 1000px) {
-  #landing h2 {
-    padding-left: 200px;
-    padding-right: 200px;
+/******************************************
+ ***********  LARGE SCREENS   *************
+ *****************************************/
+
+@media only screen and (min-width: 768px) {
+  
+  div#landing .heading {
+  line-height: 1.5;
+  font-size: 3rem;
+}
+
+div#landing .line-2 {
+  font-size: 4.75rem;
+  letter-spacing: 2px;
   }
 }
