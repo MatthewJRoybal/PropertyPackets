@@ -23,16 +23,16 @@ function doSearch() {
       var apiObject = api(fipsCodes, searchDataType, function(data) {
         if(Object.keys(data).length) {
           $('#search').hide();
-          var result = drawChart(data);
-          $('#result').html(result);
-          $('#reset').html('<input type="reset" class="reset-btn">');
+          drawChart(data);
+          $('#results').fadeIn(1000).removeClass('hidden');
+          //$('#reset').html('<input type="reset" class="reset-btn">');
         } else {
           var message = ('<div id="message">' +
                          "<h2>Sorry, this town doesn't have the data you've requested. Remember, you must choose a city with a population of 65,000 or greater.</h2>" + 
                          '<input type="reset" class="reset-btn">' +
                         '</div>');
           $('#search').hide();
-          $('#result').html(message);
+          $('#square-me').append(message);
         }
       }); // End api function
 		});	// End fipsData function
@@ -45,7 +45,7 @@ function redisplaySearch() {
     $('#message').fadeOut(1000).addClass('hidden');
     $('#results').fadeOut(1000).addClass('hidden');
     $('#search').delay(1000).fadeIn(1000);
-    $('#search')[0].reset();
+    $('#search').find('form')[0].reset();
   });
 }
 

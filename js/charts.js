@@ -1,13 +1,11 @@
 function drawChart(dataResults) {
+  console.log(dataResults);
   // Use dataResults obj to begin visualization process*
   var value2012 = Number(dataResults[2012][1][1]);
   var value2013 = Number(dataResults[2013][1][1]);
   var value2014 = Number(dataResults[2014][1][1]);
   var value2015 = Number(dataResults[2015][1][1]);
-  console.log(value2012);
-  console.log(value2013);
-  console.log(value2014);
-  console.log(value2015);
+  
   
   // Create the chart/graph data
   var data = new google.visualization.DataTable();

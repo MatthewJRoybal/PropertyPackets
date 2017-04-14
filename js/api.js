@@ -15,17 +15,17 @@ function api(fipsCodes, searchDataType, apiCallBack) {
     result(totalVacancyURL, year);
     }
   
-  for( year = 2012; year < 2016; year++ ) {
-    var ownerVacancyURL = ('https://api.census.gov/data/' + year + '/acs1?get=NAME,B25005_001E&for=place:' + placeCode + '&in=state:' + stateCode + '&key=463ceaca9227b02f83061924598f5d9b4f50a118');
-    // Make API request during loop to force a/synchronous pause
-    result(ownerVacancyURL, year);
-    }
-  
-  for( year = 2012; year < 2016; year++ ) {
-    var tenantVacancyURL = ('https://api.census.gov/data/' + year + '/acs1?get=NAME,B25004_002E&for=place:' + placeCode + '&in=state:' + stateCode + '&key=463ceaca9227b02f83061924598f5d9b4f50a118');
-    // Make API request during loop to force a/synchronous pause
-    result(tenantVacancyURL, year);
-    }
+//  for( year = 2012; year < 2016; year++ ) {
+//    var ownerVacancyURL = ('https://api.census.gov/data/' + year + '/acs1?get=NAME,B25005_001E&for=place:' + placeCode + '&in=state:' + stateCode + '&key=463ceaca9227b02f83061924598f5d9b4f50a118');
+//    // Make API request during loop to force a/synchronous pause
+//    result(ownerVacancyURL, year);
+//    }
+//  
+//  for( year = 2012; year < 2016; year++ ) {
+//    var tenantVacancyURL = ('https://api.census.gov/data/' + year + '/acs1?get=NAME,B25004_002E&for=place:' + placeCode + '&in=state:' + stateCode + '&key=463ceaca9227b02f83061924598f5d9b4f50a118');
+//    // Make API request during loop to force a/synchronous pause
+//    result(tenantVacancyURL, year);
+//    }
   function result(url, year) {
     // Finally, get the data by url
     $.getJSON(url, function(data) {
@@ -35,7 +35,7 @@ function api(fipsCodes, searchDataType, apiCallBack) {
       }         
       counter += 1;
       // If counter hits 4, use apiCallBack
-      if (counter === 4) {
+      if (counter === 4) { // change this to 12 for 3 for loops of 4 each
         apiCallBack(apiObject);
         }
       }); // End getJSON
