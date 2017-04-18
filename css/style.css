@@ -1,6 +1,7 @@
 /******************************************
  ****************  PAGE   *****************
  *****************************************/
+
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
 @import url("https://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Narrow:400,700");
 
@@ -14,6 +15,10 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+.hidden {
+  display: none;
 }
 
 div#page {
@@ -48,6 +53,7 @@ div#content {
 /******************************************
  **********  LANDING DISPLAY   ************
  *****************************************/
+
 div#landing {
   position: absolute;
   top: 55%;
@@ -89,6 +95,7 @@ div#landing h2 {
 /******************************************
  ************  SEARCH FORM   **************
  *****************************************/
+
 #search {
   position: absolute;
   top: 50%;
@@ -127,17 +134,10 @@ div#landing h2 {
   height: 35px;
 }
 
-button {
-  width: 100px;
-}
-
-.hidden {
-  display: none;
-}
-
 /******************************************
  *************   RESULTS   ****************
  *****************************************/
+
 #results {
   position: absolute;
   top: 50%;
@@ -161,21 +161,34 @@ button {
 /******************************************
  **************   BUTTONS   ***************
  *****************************************/
+
 button {
   min-width: 100px;
+  width: 100px;
   max-width: 200px;
-  background-color: aqua;
-  color: darkblue;
-  text-align: center;
-  font-size: 1.5em;
-  cursor: pointer;
   height: 40px;
-  border-radius: 5px;
+  vertical-align: middle;
+  white-space: nowrap;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 1px rgba(0, 0, 0, 0.075);
+  
+  background-image: linear-gradient(to bottom, #337ab7 0px, #265a88 100%);
+  background-repeat: repeat-x;
+  background-color: #245580;
+
+  font-size: 1.5em;
+  line-height: 1.33333;
+  color: white;
+  text-align: center;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  
+  border-color: #245580;
+  border-radius: 6px;
 }
 
 /******************************************
  **********  SMALL LANDSCAPE   ************
  *****************************************/
+
 @media only screen and (max-width: 767px) and (orientation: landscape) {
   div#landing {
     position: absolute;
@@ -206,6 +219,7 @@ button {
 /******************************************
  ***********  LARGE SCREENS   *************
  *****************************************/
+
 @media only screen and (min-width: 768px) {
   div#landing .heading {
     line-height: 1.5;
