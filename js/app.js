@@ -24,42 +24,28 @@ function doSearch() {
         if(Object.keys(data).length) {
           $('#search').hide();
           drawChart(data);
-					
-					
-          $('#results').fadeIn(1000).removeClass('hidden');
-					var resetBtn = ('<div id="reset2-btn">' +
-          	'<input type="reset" class="reset-btn">' +
-            '</div>');
-          $('#square-me').append(resetBtn);
+          // Remove results-chart hidden class and display chart
+          $('#results-chart').fadeIn(1000).removeClass('hidden');
+          // Display reset button
+          $('.results-reset-btn').fadeIn(1000).removeClass('hidden');
         } else {
-          var message = ('<div id="message">' +
-                         "<h2>Sorry, this town doesn't have the data you've requested. Remember, you must choose a city with a population of 65,000 or greater.</h2>" + 
-                         '<input type="reset" class="reset-btn">' +
-                        '</div>');
           $('#search').hide();
-          $('#square-me').append(message);
+          // Remove results-message hidden class and display message
+          $('#results-message').fadeIn(1000).removeClass('hidden');
+          // Show reset button
+          $('.results-reset-btn').fadeIn(1000).removeClass('hidden');
         }
       }); // End api function
 		});	// End fipsData function
   }); // End submit search
 } // End main function
 
-
-// Show search
-// Do search
-// Hide Search
-// Show Chart or message
-// Reset
-// Remove Chart or message
-// Show search
-// Hide Search
-// Show Chart or message
-
 // Provide the user with a way to start a new search
 function redisplaySearch() {
   $('#content').on('click', 'input:reset', function() {
-		$('#results').fadeOut(1000).addClass('hidden');
-    $('#message').fadeOut(1000).remove();
+		$('#results-chart').fadeOut(1000).addClass('hidden');
+    $('#results-message').fadeOut(1000).addClass('hidden');
+    $('.results-reset-btn').fadeOut(1000).addClass('hidden');
     $('#search').delay(1000).fadeIn(1000);
     $('#search').find('form')[0].reset();
   });

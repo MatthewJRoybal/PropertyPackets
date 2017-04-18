@@ -44,7 +44,7 @@ function drawChart(dataResults) {
   // Prepare the column chart on the results ID
   var chart = new google.visualization.ColumnChart(
     // Get the element ID where chart will be drawn
-    document.getElementById('results'));
+    document.getElementById('results-chart'));
   // At last, draw the chart
   chart.draw(data, options);
 } // End drawChart Function

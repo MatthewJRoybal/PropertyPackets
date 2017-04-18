@@ -11,7 +11,9 @@
 <body>
 	<div id="page">
     <div id="page-cover">
-		  <img id="logo" src="images/logo.png" alt="Property Packets">
+      <a href=".">
+        <img id="logo" src="images/logo.png" alt="Property Packets">
+      </a>
       <div id="content">
     
         <div id="landing">
@@ -21,7 +23,7 @@
           <button id="start">Start</button>
         </div><!-- /#landing -->
         
-        <div id="search" class="no-show">
+        <div id="search" class="hidden">
           <form>
            
             <div id="search-place" class="search-input search-form-item">
@@ -107,10 +109,16 @@
           </form>
         </div><!-- /#search end-->
 
-        <div id="square-me">
-          <div id="results"></div>
+        <div id="results">
+          <div id="results-chart" class="hidden"></div>
+          <div id="results-message" class="hidden">
+            <h2>Sorry, this town doesn't have the data you've requested. Remember, you must choose a city with a population of 65,000 or greater.</h2>
+          </div>
+          <div id="results-reset-btn">
+            <input type="reset" class="results-reset-btn hidden">
+          </div>
         </div>
-       
+
       </div><!-- /#content end-->
     </div><!-- /#page-cover -->
   </div><!-- /#page -->
