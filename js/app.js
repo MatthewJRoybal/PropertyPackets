@@ -6,7 +6,7 @@ function showSearch() {
 }
 
 function doSearch() {
-  $('#content').on('click', '#search-button', function() {
+  $('#content').on('click', '#search-btn', function() {
     event.preventDefault();
     // Get the values
     var searchPlaceValue = $('#place').val();
@@ -42,7 +42,7 @@ function doSearch() {
 
 // Provide the user with a way to start a new search
 function redisplaySearch() {
-  $('#content').on('click', 'input:reset', function() {
+  $('#content').on('click', '.results-reset-btn', function() {
 		$('#results-chart').fadeOut(1000).addClass('hidden');
     $('#results-message').fadeOut(1000).addClass('hidden');
     $('.results-reset-btn').fadeOut(1000).addClass('hidden');

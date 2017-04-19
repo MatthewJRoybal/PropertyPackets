@@ -17,20 +17,20 @@
       <div id="content">
     
         <div id="landing">
-          <span class="heading line-1">Real Estate Investing</span>
+          <span class="heading line-1">Enter a City and get</span>
           <span class="heading line-2">Market Data</span>
-          <h2>With Property Packets, you can search any city with a population of 65,000 or greater and return chart information to make better choices</h2>
+          <h2>With Property Packets, you can search any US city with a population of 65,000 or greater and return real estate market data in chart format</h2>
           <button id="start">Start</button>
         </div><!-- /#landing -->
         
         <div id="search" class="hidden">
           <form>
            
-            <div id="search-place" class="search-input search-form-item">
+            <div id="search-place" class="search-form-item">
               <input type="text" name="place" id="place" value="" placeholder="Enter a City" required>
             </div><!-- /#search-place end -->
             
-            <div id="search-state" class="search-input search-form-item">
+            <div id="search-state" class="search-form-item">
               <select name="state" id="state" Placeholder="State" required>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
@@ -85,7 +85,7 @@
               </select>
             </div><!-- /#search-state-btn end -->
 
-            <div id="search-type" class="search-input search-form-item">
+            <div id="search-type" class="search-form-item">
               <select name="type" id="type" Placeholder="Type" required>
                 <option value="B25001_001E">Total Housing Units</option>
                 <option value="B25002_002E">Occupied Housing Units</option>
@@ -97,14 +97,10 @@
               </select>
             </div><!-- /#search-data-type-btn end -->
             
-            <div class="search-form-item">
-              <div id="search-btn">
-                <button id="search-button">Search</button>
-              </div><!-- /#search-btn end -->
-              <div id="reset-btn">
-                <button id="reset-button" type="reset">Reset</button>
-              </div><!-- /#reset-btn end -->
-            </div><!-- /-search-buttons end -->
+						<div class="search-form-item">
+							<button id="search-btn" class="search-form-btn" type="submit">Search</button>
+							<button id="reset-btn" class="search-form-btn" type="reset">Reset</button>
+						</div>
          
           </form>
         </div><!-- /#search end-->
@@ -115,7 +111,8 @@
             <h2>Sorry, this town doesn't have the data you've requested. Remember, you must choose a city with a population of 65,000 or greater.</h2>
           </div>
           <div id="results-reset-btn">
-            <input type="reset" class="results-reset-btn hidden">
+          	<button type="reset" class="results-reset-btn hidden">Reset</button>
+<!--            <input type="reset" class="results-reset-btn hidden">-->
           </div>
         </div>
 
