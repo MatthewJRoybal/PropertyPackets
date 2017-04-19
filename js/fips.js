@@ -22,17 +22,21 @@ function fipsSearch(fipsData, searchState, searchPlace) {
     var arrayItemSplit = arrayItem.split('|');
     // Get values by index. Example:
     // KY|21|58116|Onton CDP|Census Designated Place|S|Webster County
-    //  0| 1|    2|        3|											           4|5|							      6
+    //  0| 1|    2|        3|											 4|5|							6
+		
     var arrayState = arrayItemSplit[0];
     var arrayStateCode = arrayItemSplit[1];
     var arrayPlaceCode = arrayItemSplit[2];
-    var arrayPlace = arrayItemSplit[3];
+    var arrayPlaceCapitalized = arrayItemSplit[3];
+		var arrayPlace = arrayPlaceCapitalized.toLowerCase();
+		var searchPlaceLower = searchPlace.toLowerCase();
+		
     if (arrayState === searchState) {
-      if (arrayPlace.substring(0, searchPlace.length) == searchPlace) {
-      // convert both city sides to lowercase to get exact matches
-      var arrayFipsCodes = [arrayStateCode, arrayPlaceCode];
-      return arrayFipsCodes; // Verified returning data
-      } // End IF City
+      if (arrayPlace.substring(0, searchPlace.length) === searchPlaceLower) {
+				// convert both city sides to lowercase to get exact matches
+				var arrayFipsCodes = [arrayStateCode, arrayPlaceCode];
+				return arrayFipsCodes; // Verified returning data
+			} // End IF City
     } // End IF State
   } // End For Loop
 } // End function

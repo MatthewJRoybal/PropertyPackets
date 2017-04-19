@@ -144,6 +144,7 @@ select {
 }
 
 #results #results-message,
+#results #results-message-two,
 #results #results-chart,
 #results #results-reset-btn {
   margin-left: -50px;

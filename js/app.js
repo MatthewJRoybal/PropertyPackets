@@ -20,6 +20,15 @@ function doSearch() {
     // Run the search request for data and display it
     fipsData(function(data) {
       var fipsCodes = fipsSearch(data, searchState, searchPlace);
+			if (!fipsCodes) {
+				// Hide the search form
+				$('#search').hide();
+        // Show the check spelling message
+				$('#results-message-two').fadeIn(1000).removeClass('hidden');
+				// Show reset button
+				$('.results-reset-btn').fadeIn(1000).removeClass('hidden');
+				// If fips codes exist, keep going!!
+			}
       var apiObject = api(fipsCodes, searchDataType, function(data) {
         if(Object.keys(data).length) {
           $('#search').hide();
@@ -45,6 +54,7 @@ function redisplaySearch() {
   $('#content').on('click', '.results-reset-btn', function() {
 		$('#results-chart').fadeOut(1000).addClass('hidden');
     $('#results-message').fadeOut(1000).addClass('hidden');
+		$('#results-message-two').fadeOut(1000).addClass('hidden');
     $('.results-reset-btn').fadeOut(1000).addClass('hidden');
     $('#search').delay(1000).fadeIn(1000);
     $('#search').find('form')[0].reset();
