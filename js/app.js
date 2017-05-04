@@ -1,12 +1,12 @@
 function showSearch() {
   $('#content').on('click', '#landing', function() {
-    $(this).fadeOut(1000).addClass('hidden');
-    $('#search').delay(1000).fadeIn(1000);
+    $(this).fadeOut(500).addClass('hidden');
+    $('#search').delay(500).fadeIn(500);
   })
 }
 
 function doSearch() {
-  $('#content').on('click', '#search-btn', function() {
+  $('#content').on('click', '#search-btn', function(event) {
     event.preventDefault();
     // Get the values
     var searchPlaceValue = $('#place').val();
@@ -16,7 +16,6 @@ function doSearch() {
 		var searchPlace = searchPlaceValue.toString();
     var searchState = searchStateValue.toString();
     var searchDataType = searchDataTypeValue.toString();
-
     // Run the search request for data and display it
     fipsData(function(data) {
       var fipsCodes = fipsSearch(data, searchState, searchPlace);
@@ -24,9 +23,9 @@ function doSearch() {
 				// Hide the search form
 				$('#search').hide();
         // Show the check spelling message
-				$('#results-message-two').fadeIn(1000).removeClass('hidden');
+				$('#results-message-two').fadeIn(500).removeClass('hidden');
 				// Show reset button
-				$('.results-reset-btn').fadeIn(1000).removeClass('hidden');
+				$('.results-reset-btn').fadeIn(500).removeClass('hidden');
 				// If fips codes exist, keep going!!
 			}
       var apiObject = api(fipsCodes, searchDataType, function(data) {
@@ -34,15 +33,15 @@ function doSearch() {
           $('#search').hide();
           drawChart(data);
           // Remove results-chart hidden class and display chart
-          $('#results-chart').fadeIn(1000).removeClass('hidden');
+          $('#results-chart').fadeIn(500).removeClass('hidden');
           // Display reset button
-          $('.results-reset-btn').fadeIn(1000).removeClass('hidden');
+          $('.results-reset-btn').fadeIn(500).removeClass('hidden');
         } else {
           $('#search').hide();
           // Remove results-message hidden class and display message
-          $('#results-message').fadeIn(1000).removeClass('hidden');
+          $('#results-message').fadeIn(500).removeClass('hidden');
           // Show reset button
-          $('.results-reset-btn').fadeIn(1000).removeClass('hidden');
+          $('.results-reset-btn').fadeIn(500).removeClass('hidden');
         }
       }); // End api function
 		});	// End fipsData function
@@ -52,11 +51,11 @@ function doSearch() {
 // Provide the user with a way to start a new search
 function redisplaySearch() {
   $('#content').on('click', '.results-reset-btn', function() {
-		$('#results-chart').fadeOut(1000).addClass('hidden');
-    $('#results-message').fadeOut(1000).addClass('hidden');
-		$('#results-message-two').fadeOut(1000).addClass('hidden');
-    $('.results-reset-btn').fadeOut(1000).addClass('hidden');
-    $('#search').delay(1000).fadeIn(1000);
+		$('#results-chart').fadeOut(500).addClass('hidden');
+    $('#results-message').fadeOut(500).addClass('hidden');
+		$('#results-message-two').fadeOut(500).addClass('hidden');
+    $('.results-reset-btn').fadeOut(500).addClass('hidden');
+    $('#search').delay(500).fadeIn(500);
     $('#search').find('form')[0].reset();
   });
 }

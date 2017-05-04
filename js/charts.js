@@ -1,33 +1,39 @@
 function drawChart(dataResults) {
-  console.log(dataResults);
   // Use dataResults obj to begin visualization process*
-  var value2012 = Number(dataResults[2012][1][1]);
-  var value2013 = Number(dataResults[2013][1][1]);
-  var value2014 = Number(dataResults[2014][1][1]);
-  var value2015 = Number(dataResults[2015][1][1]);
-  
-  
-  // Create the chart/graph data
-  var data = new google.visualization.DataTable();
-  data.addColumn('string', 'Year');
-  data.addColumn('number', 'Units');
-  data.addRows([
-    ['2012', value2012],
-    ['2013', value2013],
-    ['2014', value2014],
-    ['2015', value2015],
-  ]);
+  	
+	function helper(year, dataType) {
+		return Number(dataResults[dataType][year][1][1]);
+	}
+	
+	var data = google.visualization.arrayToDataTable([
+		['Year', 'Total Housing', 'Owner Occupied Housing', 'Renter Occupied Housing'],
+		['2012', helper(2012, 'totalHousing'), helper(2012, 'ownerOccupiedHousing'), helper(2012, 'renterOccupiedHousing')],
+    ['2013', helper(2013, 'totalHousing'), helper(2013, 'ownerOccupiedHousing'), helper(2013, 'renterOccupiedHousing')],
+    ['2014', helper(2014, 'totalHousing'), helper(2014, 'ownerOccupiedHousing'), helper(2014, 'renterOccupiedHousing')],
+    ['2015', helper(2015, 'totalHousing'), helper(2015, 'ownerOccupiedHousing'), helper(2015, 'renterOccupiedHousing')]
+	]);
+
+//  // Create the chart/graph data
+//  var data = new google.visualization.DataTable();
+//  data.addColumn('string', 'string','string','Year');
+//  data.addColumn('number', 'number','number', 'Units');
+//  data.addRows([
+//    ['2012', helper(2012, 'totalHousing'), helper(2012, 'ownerOccupiedHousing'), helper(2012, 'renterOccupiedHousing')],
+//    ['2013', helper(2013, 'totalHousing'), helper(2013, 'ownerOccupiedHousing'), helper(2013, 'renterOccupiedHousing')],
+//    ['2014', helper(2014, 'totalHousing'), helper(2014, 'ownerOccupiedHousing'), helper(2014, 'renterOccupiedHousing')],
+//    ['2015', helper(2015, 'totalHousing'), helper(2015, 'ownerOccupiedHousing'), helper(2015, 'renterOccupiedHousing')],
+//  ]);
   
   // Create options for a title and subtitle on the chart
   var options = {
-    chart: {
-      title: 'Total Housing Units 2012-2015',
-      // Create a subtitle to show place name match
-      subtitle: dataResults[2015][1][0],
-    },
+//    chart: {
+//      title: 'Total Housing Units 2012-2015',
+//      // Create a subtitle to show place name match
+//      subtitle: dataResults[2015][1][0],
+//    },
     // Add some color
     backgroundColor: {
-      stroke: 'limegreen',
+      stroke: 'orange',
       strokeWidth: 15
     },
     // A little animation
@@ -36,10 +42,35 @@ function drawChart(dataResults) {
       duration: 2000,
       easing: 'out',
     },
+		width: 800,
+    height: 400,
+    chartArea: {  width: "50%", height: "70%" },
     // And some labels with a size
-    vAxis: {title: "Units"},
-    hAxis: {title: "Year"},
-    width: 800,
+    vAxis: {title: "Units",
+			textStyle: {
+				fontSize: 16,
+				bold: true,
+				italic: false
+			},
+			titleTextStyle: {
+				fontSize: 16,
+				bold: true,
+				italic: false
+			}
+		},
+    hAxis: {title: "Year", 
+			textStyle: {
+				fontSize: 16,
+				bold: true,
+				italic: false
+			},
+			titleTextStyle: {
+				fontSize: 16,
+				bold: true,
+				italic: false
+			}
+		}
+
   };
   // Prepare the column chart on the results ID
   var chart = new google.visualization.ColumnChart(
