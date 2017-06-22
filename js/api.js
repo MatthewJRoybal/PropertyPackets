@@ -44,13 +44,14 @@ function api(fipsCodes, searchDataType, apiCallBack) {
       // If data is truthy, store it. Otherwise leave empty
       if (data) {
         apiObject[dataType][year] = data;
+        
       }         
       counter += 1;
-			console.log(apiObject);
       // If counter hits 4, use apiCallBack
       if (counter === 12) {
         apiCallBack(apiObject);
         }
       }); // End getJSON
     }; // End callback function
+  console.log(apiObject);
 } // End api function
