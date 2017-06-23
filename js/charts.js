@@ -1,28 +1,21 @@
 function drawChart(dataResults) {
   // Use dataResults obj to begin visualization process*
+
+  var titleOne = (Object.keys(dataResults)[0]);
+  var titleTwo = (Object.keys(dataResults)[1]);
+  var titleThree = (Object.keys(dataResults)[2]);
   	
 	function helper(year, dataType) {
 		return Number(dataResults[dataType][year][1][1]);
 	}
 	
 	var data = google.visualization.arrayToDataTable([
-		['Year', 'Total Housing', 'Owner Occupied Housing', 'Renter Occupied Housing'],
-		['2012', helper(2012, 'totalHousing'), helper(2012, 'ownerOccupiedHousing'), helper(2012, 'renterOccupiedHousing')],
-    ['2013', helper(2013, 'totalHousing'), helper(2013, 'ownerOccupiedHousing'), helper(2013, 'renterOccupiedHousing')],
-    ['2014', helper(2014, 'totalHousing'), helper(2014, 'ownerOccupiedHousing'), helper(2014, 'renterOccupiedHousing')],
-    ['2015', helper(2015, 'totalHousing'), helper(2015, 'ownerOccupiedHousing'), helper(2015, 'renterOccupiedHousing')]
+		['Year', titleOne, titleTwo, titleThree],
+		['2012', helper(2012, titleOne), helper(2012, titleTwo), helper(2012, titleThree)],
+    ['2013', helper(2013, titleOne), helper(2013, titleTwo), helper(2013, titleThree)],
+    ['2014', helper(2014, titleOne), helper(2014, titleTwo), helper(2014, titleThree)],
+    ['2015', helper(2015, titleOne), helper(2015, titleTwo), helper(2015, titleThree)]
 	]);
-
-//  // Create the chart/graph data
-//  var data = new google.visualization.DataTable();
-//  data.addColumn('string', 'string','string','Year');
-//  data.addColumn('number', 'number','number', 'Units');
-//  data.addRows([
-//    ['2012', helper(2012, 'totalHousing'), helper(2012, 'ownerOccupiedHousing'), helper(2012, 'renterOccupiedHousing')],
-//    ['2013', helper(2013, 'totalHousing'), helper(2013, 'ownerOccupiedHousing'), helper(2013, 'renterOccupiedHousing')],
-//    ['2014', helper(2014, 'totalHousing'), helper(2014, 'ownerOccupiedHousing'), helper(2014, 'renterOccupiedHousing')],
-//    ['2015', helper(2015, 'totalHousing'), helper(2015, 'ownerOccupiedHousing'), helper(2015, 'renterOccupiedHousing')],
-//  ]);
   
   // Create options for a title and subtitle on the chart
   var options = {
@@ -75,7 +68,7 @@ function drawChart(dataResults) {
   // Prepare the column chart on the results ID
   var chart = new google.visualization.ColumnChart(
     // Get the element ID where chart will be drawn
-    document.getElementById('results-chart'));
+    document.getElementById('js-app'));
   // At last, draw the chart
   chart.draw(data, options);
 } // End drawChart Function

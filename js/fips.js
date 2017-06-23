@@ -1,10 +1,10 @@
 function fipsData(dataCallback) {
   $.ajax('fips.txt', {
 		  success: function(data) {
-		  // Split on line breaks
+        // Split on line breaks
 		    var rawArray = data.split('\n');
-			   // Remove empty array items
-      var filterArray = rawArray.filter(function(items) {
+			  // Remove empty array items
+        var filterArray = rawArray.filter(function(items) {
         var filteredItems = (items.trim() != '');
           return filteredItems;
         });

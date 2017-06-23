@@ -2,8 +2,7 @@
  ****************  PAGE   *****************
  *****************************************/
 
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
-@import url("https://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Narrow:400,700");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|PT+Sans|PT+Sans+Narrow:400,700");
 
 body * {
   box-sizing: border-box;
@@ -17,12 +16,8 @@ body {
   padding: 0;
 }
 
-.hidden {
-  display: none;
-}
-
-div#page {
-  z-index: -10;
+#page {
+  z-index: -50;
   height: 100%;
   background: url(../images/background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -31,8 +26,8 @@ div#page {
   background-size: cover;
 }
 
-div#page-cover {
-  z-index: -5;
+#page-cover {
+  z-index: -40;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.85);
 }
@@ -46,25 +41,38 @@ img#logo {
   max-width: 300px;
 }
 
-div#content {
+#content {
   height: 100%;
+}
+
+#js-app {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.errors {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /******************************************
  **********  LANDING DISPLAY   ************
  *****************************************/
 
-div#landing {
+#landing {
   position: absolute;
-  top: 55%;
+  top: 45%;
   left: 50%;
-  transform: translate(-50%, -55%);
+  transform: translate(-50%, -45%);
   margin: 0 auto;
   max-width: 600px;
   text-align: center;
 }
 
-div#landing .heading {
+#landing .heading {
   display: block;
   line-height: 1.25;
   font-size: 2rem;
@@ -76,7 +84,7 @@ div#landing .heading {
   text-align: center;
 }
 
-div#landing .line-2 {
+#landing .line-2 {
   font-family: 'PT Sans Narrow', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
@@ -84,7 +92,7 @@ div#landing .line-2 {
   letter-spacing: 2px;
 }
 
-div#landing h2 {
+#landing h2 {
   margin-top: 10px;
   padding: 25px 0;
   color: darkblue;
@@ -97,16 +105,12 @@ div#landing h2 {
  *****************************************/
 
 #search {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
+  min-width: 300px;
   margin-top: 25px;
 }
 
 .search-form-item {
-  width: 80%;
+  width: 90%;
   margin: 15px auto;
 }
 
@@ -133,31 +137,6 @@ select {
 }
 
 /******************************************
- *************   RESULTS   ****************
- *****************************************/
-
-#results {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-#results #results-message,
-#results #results-message-two,
-#results #results-chart,
-#results #results-reset-btn {
-  margin-left: -50px;
-  margin-right: -50px;
-}
-
-#results-reset-btn {
-  position: relative;
-  top: 20px;
-  left: 0;
-}
-
-/******************************************
  **************   BUTTONS   ***************
  *****************************************/
 
@@ -165,7 +144,7 @@ select {
 
 button,
 input.results-reset-btn {
-	width: 147px;
+	width: 130px;
   height: 40px;
 	border-color: #245580;
   border-radius: 6px;
@@ -174,9 +153,18 @@ input.results-reset-btn {
   color: white;
 }
 
+#results-reset-btn {
+  position: relative;
+  top: 10px;
+}
+
 button#reset-btn,
 .results-reset-btn {
 	background-image: linear-gradient(to bottom, #FF9933 0px, #EE7755 100%);
+}
+
+#reset-btn.search-form-btn {
+  margin-left: 10px;
 }
 
 /******************************************
@@ -193,7 +181,7 @@ button#reset-btn,
     text-align: center;
   }
 
-  div#landing h2 {
+  #landing h2 {
     margin: 0;
     padding: 15px 0;
   }
@@ -206,22 +194,40 @@ button#reset-btn,
     margin: 10px auto;
   }
 
-  div#reset {
+  #reset {
     margin-top: 100px; 
   }
 }
+
+/******************************************
+ ***********  LARGE SCREENS   *************
+ *****************************************/
+
+@media only screen and (min-width: 400px) and (max-width: 960px) {
+  #search {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 /******************************************
  ***********  LARGE SCREENS   *************
  *****************************************/
 
 @media only screen and (min-width: 768px) {
-  div#landing .heading {
+  #landing .heading {
     line-height: 1.5;
-    font-size: 3rem; 
+    font-size: 4rem; 
   }
 
-  div#landing .line-2 {
-    font-size: 4.75rem;
+  #landing .line-2 {
+    font-size: 5.75rem;
     letter-spacing: 2px;
+  }
+  #search {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
