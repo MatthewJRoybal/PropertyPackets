@@ -79,16 +79,10 @@ var templates = {
 
                 '<div id="search-type" class="search-form-item">' +
                   '<select name="type" id="type" Placeholder="Type" required>' +
+                    '<option value="housing">Housing</option>' +
                     '<option value="occupancy">Occupancy</option>' +
                     '<option value="vacancy">Vacancy</option>' +
-           
-                    '<option value="B25001_001E">Total Housing Units</option>' +
-                    '<option value="B25002_002E">Occupied Housing Units</option>' +
-                    '<option value="B25003_002E">Owner Occupied Housing</option>' +
-                    '<option value="B25003_003E">Renter Occupied Housing</option>' +
-                    '<option value="B25004_001E">Vacant Housing Units</option>' +
-                    '<option value="B25005_001E">Owner Vacancy Rate</option>' +
-                    '<option value="B25004_002E">Renter Vacancy Rate</option>' +
+                    '<option value="mortgage">Mortgages</option>' +
                   '</select>' +
                 '</div>' +
             
@@ -100,6 +94,30 @@ var templates = {
               '</form>' +
             '</div>'),
   resetButton: ('<div id="results-reset-btn">' + 
-                    '<button class="results-reset-btn" type="reset">Reset</button>' + 
-                   '</div>')
+                  '<button class="results-reset-btn" type="reset">Reset</button>' + 
+                '</div>')
 };
+
+  var dataSetTemplate = {
+    // B25001_001E = Total Housing Units
+    'housing': {
+      'Total Housing Units': 'B25001_001E',
+      'Total Occupied Housing Units': 'B25002_002E',
+      'Total Vacant Housing Units': 'B25002_003E'
+    },    
+    'occupancy': {
+      'Total Occupied Housing Units': 'B25002_002E',
+      'Owner Occupied Housing Units': 'B25003_002E',
+      'Renter Occupied Housing Units': 'B25003_003E'
+    },
+    'vacancy': {
+      'Vacant Housing Units': 'B25004_001E',
+      'Owner Vacancy Rate': 'B25005_002E',
+      'Renter Vacancy Rate': 'B25004_002E'
+    },
+    'mortgage': {
+      'Total Mortgage Units': 'B25027_001E',
+      'Total Mortgage Count': 'B25027_002E',
+      'Total No Mortgage Count': 'B25027_010E'
+    }
+  };

@@ -50,7 +50,6 @@ img#logo {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
 }
 
 .errors {
@@ -106,7 +105,7 @@ img#logo {
  *****************************************/
 
 #search {
-  width: 100%;
+  min-width: 300px;
   margin-top: 25px;
 }
 
@@ -145,7 +144,7 @@ select {
 
 button,
 input.results-reset-btn {
-	width: 139px;
+	width: 130px;
   height: 40px;
 	border-color: #245580;
   border-radius: 6px;
@@ -204,6 +203,18 @@ button#reset-btn,
  ***********  LARGE SCREENS   *************
  *****************************************/
 
+@media only screen and (min-width: 400px) and (max-width: 960px) {
+  #search {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/******************************************
+ ***********  LARGE SCREENS   *************
+ *****************************************/
+
 @media only screen and (min-width: 768px) {
   #landing .heading {
     line-height: 1.5;
@@ -215,7 +226,7 @@ button#reset-btn,
     letter-spacing: 2px;
   }
   #search {
-    max-width: 800px;
+    width: 800px;
     margin-left: auto;
     margin-right: auto;
   }
